@@ -1,0 +1,142 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*use css grid*/
+
+.container {
+  max-width: 960px;
+  margin-right: auto;
+  margin-left: auto; /*center on large screen*/
+  padding-right: 15px;
+  padding-left: 15px;
+  min-height: 100vh;
+}
+
+
+.notes-list {
+  display: grid; /*this just says notes-list is css container*/
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /*how many columns for grid to have */
+}
+
+/*minmax(250px, 1fr) this specifies range instead of single value, column cannot be smaller than 250 px or bigger than 1fractional unit*/
+.note.new {
+  background-color: #61dafb;
+}
+
+/*removes expandable */
+textarea {
+  border: none;
+  resize: none;
+  background-color: #61dafb;
+}
+
+/*deletes blue border*/
+textarea:focus {
+  outline: none;
+}
+
+/*button*/
+.save {
+  background-color: lightgrey;
+  border: none;
+  border-radius: 15px;
+  padding: 5px 10px 5px 10px;
+}
+
+.save:hover{
+  background-color: #ededed;  
+  cursor: pointer;
+}
+
+.note {
+  background-color: #fef68a;
+  border-radius: 10px;
+  padding: 1rem;
+  min-height: 170px; /*all notes same size*/
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  white-space: pre-wrap; /*keep spacing that is added to note*/
+
+}
+
+.delete-icon{
+  cursor: pointer;
+}
+
+
+.note-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  background-color: lightgrey;
+  border-radius:  10px;
+  padding: 5px;
+  margin-bottom: 1.5em;
+}
+
+.search input {
+  border: none;
+  background-color: lightgrey;
+
+}
+
+.search input:focus{
+  outline: none;
+}
+
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dark-mode {
+  background-color: black;
+}
+
+.dark-mode h1 {
+  color: white;
+}
